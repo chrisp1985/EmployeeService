@@ -43,6 +43,8 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle Wrapper
+        env:
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
         run: ./gradlew build -x test dockerBuildImage
 #
 #      - name: Set up Docker Buildx
