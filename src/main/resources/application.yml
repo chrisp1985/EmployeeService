@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: "jdbc:mysql://employeesqx.cbpu4vii8wy0.eu-west-2.rds.amazonaws.com:3306/EmployeesQX"
+    username: "admin"
+    password: ${DATABASE_PASSWORD}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: "Employee Service"
+    description: "An API for a DB."
