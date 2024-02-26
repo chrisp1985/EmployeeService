@@ -39,6 +39,11 @@ resource "time_sleep" "waitrolecreate" {
   create_duration = "60s"
 }
 
+data "aws_ecr_image" "service_image" {
+  repository_name = aws_ecr_repository.ecr_repository.name
+  most_recent       = true
+}
+
 resource "aws_apprunner_service" "chrisp1985_app_runners" {
   service_name = "chrisp1985_app_runners"
 
@@ -47,7 +52,8 @@ resource "aws_apprunner_service" "chrisp1985_app_runners" {
       image_configuration {
         port = "8000"
       }
-      image_identifier      = "195571588534.dkr.ecr.eu-west-2.amazonaws.com/chrisp1985_ecr_docker_repo:7643f1a786b3b7741174d43b6867f114c5a19a74" ## TODO: REMOVE HARDCODING
+      image_identifier = aw
+      #image_identifier      = "195571588534.dkr.ecr.eu-west-2.amazonaws.com/chrisp1985_ecr_docker_repo:dea514aaa16c258d9838da6ad75f13f56160d206" ## TODO: REMOVE HARDCODING
       image_repository_type = "ECR"
     }
 
