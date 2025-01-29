@@ -1,25 +1,24 @@
 package com.chrisp1985.EmployeeApi.data;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
 @Table(name = "emp")
 public class Employee {
-    public Employee(String lastName, String job, Long managerId, Date hiredate, Long salary, Long commissionValue, Long deptNumber) {
-        this.lastName = lastName;
-        this.job = job;
-        this.managerId = managerId;
-        this.hiredate = hiredate;
-        this.salary = salary;
-        this.commissionValue = commissionValue;
-        this.deptNumber = deptNumber;
-    }
 
-    @Column(name = "EMPNO")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @Column(name = "EMPNO")
     public Long employeeId;
 
     @Column(name = "ENAME")
@@ -42,8 +41,4 @@ public class Employee {
 
     @Column(name = "DEPTNO")
     public Long deptNumber;
-
-    public Employee() {
-
-    }
 }

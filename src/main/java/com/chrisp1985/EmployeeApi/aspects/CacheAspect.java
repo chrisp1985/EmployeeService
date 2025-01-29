@@ -1,5 +1,6 @@
 package com.chrisp1985.EmployeeApi.aspects;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
@@ -13,7 +14,7 @@ public class CacheAspect {
     public void onCacheEviction() {}
 
     @After("onCacheEviction()")
-    public void logCacheEvictions() {
-        System.out.println("Cache Eviction happened.");
+    public void logCacheEvictions(JoinPoint joinPoint) {
+        System.out.println("Cache Eviction triggered in method " + joinPoint.toString());
     }
 }

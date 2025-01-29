@@ -52,8 +52,7 @@ resource "aws_apprunner_service" "chrisp1985_app_runners" {
       image_configuration {
         port = "8000"
       }
-      image_identifier = aw
-      #image_identifier      = "195571588534.dkr.ecr.eu-west-2.amazonaws.com/chrisp1985_ecr_docker_repo:dea514aaa16c258d9838da6ad75f13f56160d206" ## TODO: REMOVE HARDCODING
+      image_identifier      = "195571588534.dkr.ecr.eu-west-2.amazonaws.com/chrisp1985_ecr_docker_repo:3477b04327d98cf40dd5831e50c3a0503d2fe627"
       image_repository_type = "ECR"
     }
 

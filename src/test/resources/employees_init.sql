@@ -24,7 +24,7 @@ INSERT INTO `dept` VALUES (40, 'OPERATIONS', 'BOSTON');
 
 
 CREATE TABLE `emp` (
-   `EMPNO` integer NOT NULL,
+   `EMPNO` integer NOT NULL AUTO_INCREMENT,
    `ENAME` varchar(20) NOT NULL,
    `JOB` varchar(20) NOT NULL,
    `MGR` integer,
